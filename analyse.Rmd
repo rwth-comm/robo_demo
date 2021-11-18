@@ -17,6 +17,6 @@ sd(robo_care$age)
 median(robo_care$age)
 table(robo_care$age)
 qplot(robo_care$age) + xlab("Alter")
-
+names(robo_care)
 ```
 
