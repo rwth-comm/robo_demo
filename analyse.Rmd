@@ -1,0 +1,22 @@
+---
+title: "Deskriptive Analyse"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Wir wollen einen Datensatz analysieren. Dafür müssen wir einen Datenbibliothek laden und dann deskriptive Statistik anwenden.
+
+```{r daten_laden}
+library(dataforsocialscience)
+library(tidyverse)
+mean(robo_care$age)
+sd(robo_care$age)
+median(robo_care$age)
+table(robo_care$age)
+qplot(robo_care$age) + xlab("Alter")
+
+```
+
