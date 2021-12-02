@@ -1,0 +1,32 @@
+---
+title: "Inferenz"
+author: "André Calero Valdez"
+date: "2 12 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dataforsocialscience)
+# installs "remotes" and "apastats" if not already installed.
+if (!require("apastats")) {
+  if (!require("remotes")) {
+    install.packages(
+      "remotes",
+      upgrade = "never",
+      libs_only = TRUE,
+      force = TRUE
+    )
+  }
+  remotes::install_github(
+    'achetverikov/apastats',
+    subdir = 'apastats',
+    upgrade = "never",
+    libs_only = TRUE,
+    force = TRUE
+  )
+}
+```
+
+# Tests
