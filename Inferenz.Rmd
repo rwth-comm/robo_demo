@@ -30,4 +30,34 @@ if (!require("apastats")) {
 }
 ```
 
-# Tests
+# Unterschiedhypothesen prüfen
+
+Wir wollen drei verschiedene t-Tests durchführen.
+
+## Einfache t-Test
+
+Der einfache t-Test prüft, ob sich der Wert einer Variable von einer Konstante (Zahl) unterscheidet.
+
+```{r}
+mean(robo_care$cse)
+nrow(robo_care)
+
+t1 <- t.test(robo_care$cse, mu = 3.5)
+
+
+
+```
+Die Kontrollüberzeugung im Umgang mit Technik ist in unserer Stichprobe hoch ausgeprägt (M=`r mean(robo_care$cse)`, SD = `r sd(robo_care$cse)`).
+Ein einfacher t-Test zeigt (`r apastats::describe.ttest(t1)`), dass diese hohe Ausprägung auch auf die Grundgesamtheit übertragen werden kann. Es ist davon auszugehen, dass Studierende der Digitalen Medienkommunikation und deren Eltern eine hohe Kontrollüberzeugung im Umgang mit Technik haben.
+
+
+## t-Test bei unverbundener Stichprobe
+
+## t-test bei verbundener Stichprobe
+
+
+
+
+
+
+
