@@ -53,7 +53,24 @@ Ein einfacher t-Test zeigt (`r apastats::describe.ttest(t1)`), dass diese hohe A
 
 ## t-Test bei unverbundener Stichprobe
 
+```{r}
+robo_care %>% 
+  filter(gender=="male") -> robo_male
+robo_care %>% 
+  filter(gender=="female") -> robo_female
+
+t.test(robo_male$cse, robo_female$cse)
+
+```
+
+
 ## t-test bei verbundener Stichprobe
+
+```{r}
+
+t.test(robo_care$robo_bed, robo_care$human_bed)
+
+```
 
 
 
