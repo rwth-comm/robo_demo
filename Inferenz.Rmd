@@ -47,7 +47,7 @@ t1 <- t.test(robo_care$cse, mu = 3.5)
 
 
 ```
-Die Kontrollüberzeugung im Umgang mit Technik ist in unserer Stichprobe hoch ausgeprägt (M=`r mean(robo_care$cse)`, SD = `r sd(robo_care$cse)`).
+Die Kontrollüberzeugung im Umgang mit Technik ist in unserer Stichprobe hoch ausgeprägt (M=`r round(mean(robo_care$cse), 3)`, SD = `r round(sd(robo_care$cse), 3)`).
 Ein einfacher t-Test zeigt (`r apastats::describe.ttest(t1)`), dass diese hohe Ausprägung auch auf die Grundgesamtheit übertragen werden kann. Es ist davon auszugehen, dass Studierende der Digitalen Medienkommunikation und deren Eltern eine hohe Kontrollüberzeugung im Umgang mit Technik haben.
 
 
