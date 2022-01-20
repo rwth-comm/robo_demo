@@ -8,6 +8,63 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(dataforsocialscience)
+robo_care
+
+```
+
+```{r}
+robo_care %>% 
+  mutate(tw_cat = ifelse(technical_knowledge < 3.5, "low", "high")) %>% 
+  jmv::ancova(dep = privacy_concerns, factors = vars(tw_cat, gender), 
+              emmPlots = TRUE, emMeans = privacy_concerns ~ tw_cat:gender)
+
+```
+# Visualisierungens
+
+# Univariate Daten
+```{r}
+robo_care %>% 
+  ggplot() +
+  aes(x = age) +
+  geom_histogram()
+
+```
+
+# Bivariate
+```{r}
+robo_care %>% 
+  ggplot() +
+  aes(x = age, y = robo_bed) +
+  geom_jitter(height = 0.2, width = 0, alpha = 0.5)
+```
+
+
+# Trivariate
+```{r}
+robo_care %>% 
+  ggplot() +
+  aes(x = age, y = robo_bed) +
+  geom_jitter(height = 0.2, width = 0, alpha = 0.5) +
+  facet_wrap(~ gender)
+```
+
+
+# Bivariate
+```{r}
+robo_care %>% 
+  ggplot() +
+  aes(x = age, y = cse) +
+  geom_jitter(alpha = 0.5, width = 0.2, height = 0.2) +
+  geom_smooth(method = "lm")
+
+# cse = a * age + b
+
+cor.test(robo_care$age, robo_care$cse)
+
+# 4.8 intercept -0.2
+
+jmv::linReg(robo_care, dep = cse, covs = vars(age),
+            blocks = list(list("age")))
 
 ```
 
