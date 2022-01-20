@@ -63,8 +63,11 @@ cor.test(robo_care$age, robo_care$cse)
 
 # 4.8 intercept -0.2
 
-jmv::linReg(robo_care, dep = cse, covs = vars(age),
-            blocks = list(list("age")))
+jmv::linReg(robo_care, dep = automation_tendency, covs = vars(age, technical_knowledge, cse),
+            blocks = list(list("cse"),
+                          list("technical_knowledge"),
+                          list("age")
+                          ), stdEst = TRUE)
 
 ```
 
