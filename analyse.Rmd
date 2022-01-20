@@ -20,3 +20,9 @@ qplot(robo_care$age) + xlab("Alter")
 names(robo_care)
 ```
 
+```{r}
+robo_care %>% 
+ggplot() + aes(x = gender, y = age) + geom_point() +
+  xlab(paste("test", n()))
+```
+
